@@ -12,6 +12,7 @@ resource "aws_instance" "jenkins" {
   name = "jenkins"
   ami = "ami-06756d650220756d8"  # Ubuntu 18.04 LTS
   instance_type = "t2.micro"
+  associate_public_ip = true
   subnet_id = var.subnet_id  # The other public subnet in your VPC
   vpc_security_group_ids = [var.security_group_id]  # Allow SSH and HTTP traffic
 
