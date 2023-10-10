@@ -21,23 +21,6 @@ resource "aws_instance" "jenkins" {
   }
 }
 
-#configure vpc
-
-resource "aws_vpc" "project_vpc" {
-  cidr_block = ""
-
-  tags = {
-    Name = "project-vpc"
-  }
-}
-
-#configure subnet
-
-resource "aws_subnet" "my_pub_subnet" {
-  vpc_id            = aws_vpc.my_vpc.id
-  cidr_block        = "" 
-  availability_zone = "us-east-1a"
-
   tags = {
     Name = "project-subnet-public1-us-east-1a"
   }
